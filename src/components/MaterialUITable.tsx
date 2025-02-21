@@ -98,9 +98,26 @@ const Example = () => {
         Cell: ({ row }) => (
           <Box sx={{display: 'flex', gap: '2ch', alignItems: 'center'}}>
             <div className="flex gap-1">
-              {row.original.teams.slice(0, 3).map((team, index) => (
-                <div  className="px-[8px] py-[2px] bg-[#CCE6FF] text-[#0080FF] rounded-2xl" key={index}>{team}</div>
-              ))}
+              {/*{row.original.teams.slice(0, 3).map((team, index) => (*/}
+              {/*  <div  className="px-[8px] py-[2px] bg-[#CCE6FF] text-[#0080FF] rounded-2xl" key={index}>{team}</div>*/}
+              {/*))}*/}
+              {row.original.teams[0] && (
+                <div className="px-[8px] py-[2px] bg-[#CCE6FF] text-[#0080FF] rounded-2xl">
+                  {row.original.teams[0]}
+                </div>
+              )}
+
+              {row.original.teams[1] && (
+                <div className="px-[8px] py-[2px] bg-[#99CCFF] text-[#004D99] rounded-2xl">
+                  {row.original.teams[1]}
+                </div>
+              )}
+
+              {row.original.teams[2] && (
+                <div className="px-[8px] py-[2px] bg-[#66B3FF] text-[#003366] rounded-2xl">
+                  {row.original.teams[2]}
+                </div>
+              )}
               {row.original.teams.length > 3 && <div className="px-[8px] py-[2px] bg-[#F2F2F2] rounded-2xl">+{row.original.teams.length - 3}</div>}
             </div>
           </Box>
